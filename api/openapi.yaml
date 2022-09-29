@@ -1,0 +1,293 @@
+openapi: 3.0.0
+info:
+  title: Cisco-Reservable-SD-WAN
+  version: 1.0.0
+servers:
+- url: https://https
+tags:
+- name: Authentication
+- name: SD-WAN Fabric Devices
+- name: SD-WAN Device Template
+- name: SD-WAN Device Policy
+paths:
+  //example.com:{port}/j_security_check:
+    post:
+      parameters:
+      - example: application/x-www-form-urlencoded
+        explode: false
+        in: header
+        name: Content-Type
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/__example_com__port__j_security_check_post_request'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Authentication
+      tags:
+      - Authentication
+  //example.com:{port}/dataservice/client/token:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Token
+      tags:
+      - Authentication
+  //example.com:{port}/dataservice/device:
+    get:
+      parameters:
+      - example: "{{X-XSRF-TOKEN}}"
+        explode: false
+        in: header
+        name: X-XSRF-TOKEN
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Fabric Devices
+      tags:
+      - SD-WAN Fabric Devices
+  //example.com:{port}/dataservice/device/monitor:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Devices Status
+      tags:
+      - SD-WAN Fabric Devices
+  //example.com:{port}/dataservice/device/counters:
+    get:
+      parameters:
+      - example: "{{X-XSRF-TOKEN}}"
+        explode: false
+        in: header
+        name: X-XSRF-TOKEN
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Device Counters
+      tags:
+      - SD-WAN Fabric Devices
+  //example.com:{port}/dataservice/statistics/interface:
+    get:
+      parameters:
+      - example: "{{X-XSRF-TOKEN}}"
+        explode: false
+        in: header
+        name: X-XSRF-TOKEN
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Interface statistics
+      tags:
+      - SD-WAN Fabric Devices
+  //example.com:{port}/dataservice/template/feature:
+    get:
+      parameters:
+      - example: "{{X-XSRF-TOKEN}}"
+        explode: false
+        in: header
+        name: X-XSRF-TOKEN
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Template Feature
+      tags:
+      - SD-WAN Device Template
+  //example.com:{port}/dataservice/template/feature/types:
+    get:
+      parameters:
+      - example: "{{X-XSRF-TOKEN}}"
+        explode: false
+        in: header
+        name: X-XSRF-TOKEN
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Template Feature Type
+      tags:
+      - SD-WAN Device Template
+  //example.com:{port}/dataservice/template/policy/vedge/devices:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: vEdge Template Policy
+      tags:
+      - SD-WAN Device Policy
+  //example.com:{port}/dataservice/template/policy/list:
+    get:
+      parameters:
+      - example: "{{X-XSRF-TOKEN}}"
+        explode: false
+        in: header
+        name: X-XSRF-TOKEN
+        required: false
+        schema:
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: port
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                example: pong
+                type: string
+          description: Successful response
+      summary: Policy List
+      tags:
+      - SD-WAN Device Policy
+components:
+  schemas:
+    __example_com__port__j_security_check_post_request:
+      properties:
+        j_username:
+          example: "{{j_username}}"
+          type: string
+        j_password:
+          example: "{{j_password}}"
+          type: string
